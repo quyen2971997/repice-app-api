@@ -9,8 +9,18 @@ docker-compose run --rm app sh -c "flake8"
 docker-compose run --rm app sh -c "django-admin startproject app ."
 
 docker-compose up
+docker-compose down
+docker-compose build
 
 # http://127.0.0.1:8000/
+
+docker-compose run --rm app sh -c "python manage.py test"
+
+docker-compose run --rm app sh -c "python manage.py startapp core"
+
+docker-compose run --rm app sh -c "python manage.py commands"
+
+
 
 
 
